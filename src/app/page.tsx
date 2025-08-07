@@ -1,55 +1,122 @@
 
+'use client';
+
+import { useState, useEffect } from 'react';
+
 export default function Home() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      const navToggle = document.getElementById('nav-toggle');
+      const navMenu = document.getElementById('nav-menu');
+      
+      if (navToggle && navMenu && 
+          !navToggle.contains(event.target as Node) && 
+          !navMenu.contains(event.target as Node)) {
+        setIsMenuOpen(false);
+      }
+    };
+
+    document.addEventListener('click', handleClickOutside);
+    return () => document.removeEventListener('click', handleClickOutside);
+  }, []);
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
+  const closeMenu = () => {
+    setIsMenuOpen(false);
+  };
   return (
     <div className="min-h-screen bg-white text-gray-900 font-sans">
-      {/* Navigation Header */}
-      <nav className="bg-gradient-to-r from-blue-600 to-cyan-600 shadow-xl sticky top-0 z-50 backdrop-blur-md">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-16">
-            <div className="text-white font-bold text-xl animate-fade-in-up">
-              <span className="bg-white text-blue-600 px-3 py-1 rounded-full text-sm mr-2">PR</span>
-              Pedaviti Rama Krishna Reddy
+      {/* Simple Navigation Menu */}
+      <div className="fixed top-6 right-6 z-50">
+        <div className="relative">
+          {/* Hamburger Menu Button */}
+          <button 
+            id="nav-toggle" 
+            onClick={toggleMenu}
+            className="w-12 h-12 bg-slate-700 hover:bg-slate-600 rounded-full flex items-center justify-center shadow-lg transition-all duration-300"
+          >
+            <div className="w-6 h-6 flex flex-col justify-center items-center space-y-1">
+              <div className="w-5 h-0.5 bg-white rounded-full transition-all duration-300"></div>
+              <div className="w-5 h-0.5 bg-white rounded-full transition-all duration-300"></div>
+              <div className="w-5 h-0.5 bg-white rounded-full transition-all duration-300"></div>
             </div>
-            <div className="hidden md:flex space-x-8">
-              <a href="#about" className="text-white hover:text-cyan-200 transition-all duration-300 relative group">
+          </button>
+
+          {/* Navigation Menu */}
+          <div 
+            id="nav-menu" 
+            className={`absolute top-16 right-0 bg-white rounded-xl shadow-2xl border border-gray-100 p-6 min-w-[200px] transform transition-all duration-300 origin-top-right ${
+              isMenuOpen 
+                ? 'scale-100 opacity-100' 
+                : 'scale-0 opacity-0'
+            }`}
+          >
+            <nav className="space-y-4">
+              <a 
+                href="#home" 
+                onClick={closeMenu}
+                className="block text-gray-700 hover:text-blue-600 font-medium py-2 px-3 rounded-lg hover:bg-blue-50 transition-all duration-300"
+              >
+                Home
+              </a>
+              <a 
+                href="#projects" 
+                onClick={closeMenu}
+                className="block text-gray-700 hover:text-blue-600 font-medium py-2 px-3 rounded-lg hover:bg-blue-50 transition-all duration-300"
+              >
+                My Projects
+              </a>
+              <a 
+                href="#services" 
+                onClick={closeMenu}
+                className="block text-gray-700 hover:text-blue-600 font-medium py-2 px-3 rounded-lg hover:bg-blue-50 transition-all duration-300"
+              >
+                Services
+              </a>
+              <a 
+                href="#about" 
+                onClick={closeMenu}
+                className="block text-gray-700 hover:text-blue-600 font-medium py-2 px-3 rounded-lg hover:bg-blue-50 transition-all duration-300"
+              >
                 About
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-cyan-200 transition-all duration-300 group-hover:w-full"></span>
               </a>
-              <a href="#experience" className="text-white hover:text-cyan-200 transition-all duration-300 relative group">
-                Experience
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-cyan-200 transition-all duration-300 group-hover:w-full"></span>
-              </a>
-              <a href="#projects" className="text-white hover:text-cyan-200 transition-all duration-300 relative group">
-                Projects
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-cyan-200 transition-all duration-300 group-hover:w-full"></span>
-              </a>
-              <a href="#skills" className="text-white hover:text-cyan-200 transition-all duration-300 relative group">
-                Skills
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-cyan-200 transition-all duration-300 group-hover:w-full"></span>
-              </a>
-              <a href="#education" className="text-white hover:text-cyan-200 transition-all duration-300 relative group">
-                Education
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-cyan-200 transition-all duration-300 group-hover:w-full"></span>
-              </a>
-              <a href="#contact" className="text-white hover:text-cyan-200 transition-all duration-300 relative group">
+              <a 
+                href="#contact" 
+                onClick={closeMenu}
+                className="block text-gray-700 hover:text-blue-600 font-medium py-2 px-3 rounded-lg hover:bg-blue-50 transition-all duration-300"
+              >
                 Contact
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-cyan-200 transition-all duration-300 group-hover:w-full"></span>
               </a>
-            </div>
-            {/* Mobile Menu Button */}
-            <div className="md:hidden">
-              <button className="text-white hover:text-cyan-200 transition-colors">
-                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-                </svg>
-              </button>
-            </div>
+              <div className="border-t border-gray-200 my-3"></div>
+              <a 
+                href="#contact" 
+                onClick={closeMenu}
+                className="block bg-gradient-to-r from-blue-600 to-cyan-600 text-white text-center py-3 px-4 rounded-lg hover:shadow-lg transition-all duration-300 transform hover:scale-105"
+              >
+                Get in Touch
+              </a>
+            </nav>
           </div>
         </div>
-      </nav>
+      </div>
+
+      {/* Brand/Logo in Top Left */}
+      <div className="fixed top-6 left-6 z-50">
+        <div className="flex items-center space-x-3">
+          <div className="w-10 h-10 bg-gradient-to-r from-blue-600 to-cyan-600 rounded-lg flex items-center justify-center shadow-lg">
+            <span className="text-white font-bold text-lg">RK</span>
+          </div>
+          <span className="text-2xl font-bold text-gray-900 hidden sm:block">Rama Krishna</span>
+        </div>
+      </div>
 
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-gray-50 via-white to-gray-100 py-20 relative overflow-hidden min-h-screen flex items-center">
+      <section id="home" className="bg-gradient-to-br from-gray-50 via-white to-gray-100 py-20 relative overflow-hidden min-h-screen flex items-center">
         {/* Large Background Text - Fixed Visibility */}
         <div className="absolute inset-0 flex flex-col items-center justify-center pointer-events-none">
           <div className="text-[12rem] lg:text-[16rem] xl:text-[20rem] font-black text-gray-200 select-none leading-none tracking-tighter opacity-60">
@@ -441,6 +508,151 @@ export default function Home() {
             <div className="text-center">
               <div className="text-3xl font-bold text-blue-600 mb-2 animate-pulse">3+</div>
               <div className="text-gray-600">Projects Completed</div>
+            </div>
+            <div className="text-center">
+              <div className="text-3xl font-bold text-blue-600 mb-2 animate-pulse">100%</div>
+              <div className="text-gray-600">Client Satisfaction</div>
+            </div>
+            <div className="text-center">
+              <div className="text-3xl font-bold text-blue-600 mb-2 animate-pulse">24/7</div>
+              <div className="text-gray-600">Support Available</div>
+            </div>
+            <div className="text-center">
+              <div className="text-3xl font-bold text-blue-600 mb-2 animate-pulse">6+</div>
+              <div className="text-gray-600">Months Experience</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Services Section */}
+      <section id="services" className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-4xl font-bold text-center text-gray-900 mb-4 animate-fade-in-up">Services I Offer</h2>
+          <p className="text-center text-gray-600 mb-16 animate-fade-in-up animation-delay-300">Professional development solutions tailored to your needs</p>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {/* Web Development */}
+            <div className="group bg-gradient-to-br from-blue-50 to-cyan-50 rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border border-blue-100">
+              <div className="flex items-center mb-6">
+                <div className="w-16 h-16 bg-gradient-to-r from-blue-600 to-cyan-600 rounded-xl flex items-center justify-center mr-4 group-hover:scale-110 transition-transform">
+                  <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
+                  </svg>
+                </div>
+                <h3 className="text-xl font-bold text-blue-600">Web Development</h3>
+              </div>
+              <p className="text-gray-600 mb-6 leading-relaxed">Creating modern, responsive websites and web applications using cutting-edge technologies like React, Next.js, and Node.js.</p>
+              
+              <div className="flex flex-wrap gap-2">
+                <span className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">React</span>
+                <span className="bg-cyan-100 text-cyan-800 px-3 py-1 rounded-full text-sm font-medium">Next.js</span>
+                <span className="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium">Node.js</span>
+              </div>
+            </div>
+
+            {/* Frontend Development */}
+            <div className="group bg-gradient-to-br from-purple-50 to-pink-50 rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border border-purple-100">
+              <div className="flex items-center mb-6">
+                <div className="w-16 h-16 bg-gradient-to-r from-purple-600 to-pink-600 rounded-xl flex items-center justify-center mr-4 group-hover:scale-110 transition-transform">
+                  <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zM21 5H9a2 2 0 00-2 2v12a4 4 0 004 4h6a2 2 0 002-2V7a2 2 0 00-2-2z"></path>
+                  </svg>
+                </div>
+                <h3 className="text-xl font-bold text-purple-600">UI/UX Design</h3>
+              </div>
+              <p className="text-gray-600 mb-6 leading-relaxed">Designing intuitive and beautiful user interfaces with modern design principles, ensuring optimal user experience across all devices.</p>
+              
+              <div className="flex flex-wrap gap-2">
+                <span className="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm font-medium">Figma</span>
+                <span className="bg-pink-100 text-pink-800 px-3 py-1 rounded-full text-sm font-medium">Tailwind CSS</span>
+                <span className="bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full text-sm font-medium">Responsive</span>
+              </div>
+            </div>
+
+            {/* Salesforce Development */}
+            <div className="group bg-gradient-to-br from-orange-50 to-red-50 rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border border-orange-100">
+              <div className="flex items-center mb-6">
+                <div className="w-16 h-16 bg-gradient-to-r from-orange-600 to-red-600 rounded-xl flex items-center justify-center mr-4 group-hover:scale-110 transition-transform">
+                  <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+                  </svg>
+                </div>
+                <h3 className="text-xl font-bold text-orange-600">Salesforce Solutions</h3>
+              </div>
+              <p className="text-gray-600 mb-6 leading-relaxed">Salesforce platform customization, automation, and integration services to streamline your business processes and improve efficiency.</p>
+              
+              <div className="flex flex-wrap gap-2">
+                <span className="bg-orange-100 text-orange-800 px-3 py-1 rounded-full text-sm font-medium">Apex</span>
+                <span className="bg-red-100 text-red-800 px-3 py-1 rounded-full text-sm font-medium">Lightning</span>
+                <span className="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-sm font-medium">Automation</span>
+              </div>
+            </div>
+
+            {/* Website Maintenance */}
+            <div className="group bg-gradient-to-br from-green-50 to-teal-50 rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border border-green-100">
+              <div className="flex items-center mb-6">
+                <div className="w-16 h-16 bg-gradient-to-r from-green-600 to-teal-600 rounded-xl flex items-center justify-center mr-4 group-hover:scale-110 transition-transform">
+                  <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path>
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                  </svg>
+                </div>
+                <h3 className="text-xl font-bold text-green-600">Website Maintenance</h3>
+              </div>
+              <p className="text-gray-600 mb-6 leading-relaxed">Ongoing support, updates, and maintenance services to keep your website secure, fast, and up-to-date with the latest technologies.</p>
+              
+              <div className="flex flex-wrap gap-2">
+                <span className="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium">Updates</span>
+                <span className="bg-teal-100 text-teal-800 px-3 py-1 rounded-full text-sm font-medium">Security</span>
+                <span className="bg-emerald-100 text-emerald-800 px-3 py-1 rounded-full text-sm font-medium">Support</span>
+              </div>
+            </div>
+
+            {/* E-commerce Solutions */}
+            <div className="group bg-gradient-to-br from-indigo-50 to-blue-50 rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border border-indigo-100">
+              <div className="flex items-center mb-6">
+                <div className="w-16 h-16 bg-gradient-to-r from-indigo-600 to-blue-600 rounded-xl flex items-center justify-center mr-4 group-hover:scale-110 transition-transform">
+                  <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path>
+                  </svg>
+                </div>
+                <h3 className="text-xl font-bold text-indigo-600">E-commerce Development</h3>
+              </div>
+              <p className="text-gray-600 mb-6 leading-relaxed">Complete e-commerce solutions with secure payment integration, inventory management, and modern shopping experiences.</p>
+              
+              <div className="flex flex-wrap gap-2">
+                <span className="bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full text-sm font-medium">Shopify</span>
+                <span className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">Payment Gateway</span>
+                <span className="bg-slate-100 text-slate-800 px-3 py-1 rounded-full text-sm font-medium">Inventory</span>
+              </div>
+            </div>
+
+            {/* Custom Software */}
+            <div className="group bg-gradient-to-br from-gray-50 to-slate-50 rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border border-gray-100">
+              <div className="flex items-center mb-6">
+                <div className="w-16 h-16 bg-gradient-to-r from-gray-600 to-slate-600 rounded-xl flex items-center justify-center mr-4 group-hover:scale-110 transition-transform">
+                  <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"></path>
+                  </svg>
+                </div>
+                <h3 className="text-xl font-bold text-gray-600">Custom Software</h3>
+              </div>
+              <p className="text-gray-600 mb-6 leading-relaxed">Tailored software solutions designed specifically for your business requirements, from web applications to automation tools.</p>
+              
+              <div className="flex flex-wrap gap-2">
+                <span className="bg-gray-100 text-gray-800 px-3 py-1 rounded-full text-sm font-medium">Custom Build</span>
+                <span className="bg-slate-100 text-slate-800 px-3 py-1 rounded-full text-sm font-medium">Scalable</span>
+                <span className="bg-zinc-100 text-zinc-800 px-3 py-1 rounded-full text-sm font-medium">Enterprise</span>
+              </div>
+            </div>
+          </div>
+
+          {/* Service Stats */}
+          <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-8">
+            <div className="text-center">
+              <div className="text-3xl font-bold text-blue-600 mb-2 animate-pulse">50+</div>
+              <div className="text-gray-600">Projects Delivered</div>
             </div>
             <div className="text-center">
               <div className="text-3xl font-bold text-blue-600 mb-2 animate-pulse">100%</div>
