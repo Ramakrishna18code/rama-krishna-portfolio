@@ -1,4 +1,15 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Rama Krishna Portfolio
+
+This is a modern, visually stunning personal portfolio website built with Next.js, TypeScript, and Tailwind CSS. The site is designed to impress and attract visitors, featuring a bold and dominant design. It showcases Rama Krishna's CV, skills, experience, projects, and contact information.
+
+## Features
+
+- Responsive design
+- Bold, attractive UI
+- CV showcase
+- Skills and experience sections
+- Projects gallery
+- Contact form
 
 ## Getting Started
 
@@ -34,3 +45,11 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+## Customization
+
+Replace placeholder content and images with your own information and assets for a personalized portfolio.
+
+---
+
+For Copilot customization, see `.github/copilot-instructions.md`.
