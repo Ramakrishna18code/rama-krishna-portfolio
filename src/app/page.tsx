@@ -677,10 +677,10 @@ export default function Home() {
             Skills
           </h2>
           
-          <div className="grid grid-cols-4 sm:grid-cols-6 lg:grid-cols-8 gap-6 justify-items-center max-w-5xl mx-auto">
+          <div className="grid grid-cols-4 sm:grid-cols-6 lg:grid-cols-8 gap-8 justify-items-center max-w-5xl mx-auto">
             {/* HTML5 */}
-            <div className="group flex flex-col items-center justify-center w-20 h-20 bg-white rounded-lg shadow-md hover:shadow-lg transition-all duration-300 hover:scale-105">
-              <svg className="w-12 h-12 group-hover:scale-110 transition-transform duration-300" viewBox="0 0 32 32">
+            <div className="group flex flex-col items-center justify-center">
+              <svg className="w-16 h-16 hover:scale-125 transition-all duration-300 group-hover:rotate-12 filter drop-shadow-lg" viewBox="0 0 32 32">
                 <path d="m5.902 27.201-1.902-21.201h24l-1.902 21.201-8.549 2.399z" fill="#e34f26"/>
                 <path d="m16 27.858 6.907-1.918 1.625-18.14h-8.532z" fill="#ef652a"/>
                 <path d="m16 13.191h-4.09l-.282-3.165h4.372v-3.091h-7.907l.074.829.759 8.518h7.074z" fill="#ebebeb"/>
@@ -691,8 +691,8 @@ export default function Home() {
             </div>
 
             {/* CSS3 */}
-            <div className="group flex flex-col items-center justify-center w-20 h-20 bg-white rounded-lg shadow-md hover:shadow-lg transition-all duration-300 hover:scale-105">
-              <svg className="w-12 h-12 group-hover:scale-110 transition-transform duration-300" viewBox="0 0 32 32">
+            <div className="group flex flex-col items-center justify-center">
+              <svg className="w-16 h-16 hover:scale-125 transition-all duration-300 group-hover:rotate-12 filter drop-shadow-lg" viewBox="0 0 32 32">
                 <path d="m5.902 27.201-1.902-21.201h24l-1.902 21.201-8.549 2.399z" fill="#1572b6"/>
                 <path d="m16 27.858 6.907-1.918 1.625-18.14h-8.532z" fill="#33a9dc"/>
                 <path d="m16 13.191h4.372l.282-3.165h-4.654v-3.091h7.907l-.074.829-.759 8.518h-7.074z" fill="#fff"/>
@@ -704,110 +704,111 @@ export default function Home() {
             </div>
 
             {/* JavaScript */}
-            <div className="group flex flex-col items-center justify-center w-20 h-20 bg-white rounded-lg shadow-md hover:shadow-lg transition-all duration-300 hover:scale-105">
-              <svg className="w-12 h-12 group-hover:scale-110 transition-transform duration-300" viewBox="0 0 32 32">
-                <rect x="2" y="2" width="28" height="28" fill="#f7df1e"/>
+            <div className="group flex flex-col items-center justify-center">
+              <svg className="w-16 h-16 hover:scale-125 transition-all duration-300 group-hover:rotate-12 filter drop-shadow-lg" viewBox="0 0 32 32">
+                <rect x="2" y="2" width="28" height="28" fill="#f7df1e" rx="3"/>
                 <path d="m20.809 23.875c.35 0 .678-.087.975-.262.297-.174.55-.412.759-.713.208-.301.313-.654.313-1.058 0-.479-.144-.904-.431-1.275-.287-.371-.695-.742-1.224-1.113-.528-.371-.96-.742-1.296-1.113-.336-.371-.504-.775-.504-1.212 0-.371.117-.675.351-.913.234-.238.546-.357.937-.357.391 0 .729.119.975.357.246.238.369.571.369 1v.175h1.287v-.175c0-.742-.246-1.371-.738-1.887-.492-.517-1.146-.775-1.962-.775-.816 0-1.47.258-1.962.775-.492.516-.738 1.145-.738 1.887 0 .742.158 1.371.475 1.887.317.516.729.971 1.237 1.363.508.392.929.784 1.263 1.175.334.392.501.825.501 1.3 0 .479-.117.871-.351 1.175-.234.305-.546.457-.937.457-.391 0-.729-.152-.975-.457-.246-.305-.369-.696-.369-1.175v-.262h-1.287v.262c0 .742.246 1.454.738 2.137.492.683 1.146 1.025 1.962 1.025zm-7.5.0c.35 0 .678-.175.984-.525.306-.35.459-.79.459-1.32v-6.03h-1.287v6.03c0 .263-.088.488-.263.675-.175.188-.392.282-.651.282-.259 0-.476-.094-.651-.282-.175-.187-.263-.412-.263-.675v-6.03h-1.287v6.03c0 .53.153.97.459 1.32.306.35.634.525.984.525h.516z" fill="#323330"/>
               </svg>
             </div>
 
             {/* React */}
-            <div className="group flex flex-col items-center justify-center w-20 h-20 bg-white rounded-lg shadow-md hover:shadow-lg transition-all duration-300 hover:scale-105">
-              <svg className="w-12 h-12 group-hover:rotate-180 transition-transform duration-500" viewBox="0 0 32 32">
-                <circle cx="16" cy="16" r="2" fill="#61dafb"/>
-                <path d="m16 11c-8.1 0-14.6 2.2-14.6 5s6.5 5 14.6 5 14.6-2.2 14.6-5-6.5-5-14.6-5z" stroke="#61dafb" strokeWidth="1.5" fill="none"/>
-                <path d="m16 11c-8.1 0-14.6 2.2-14.6 5s6.5 5 14.6 5 14.6-2.2 14.6-5-6.5-5-14.6-5z" stroke="#61dafb" strokeWidth="1.5" fill="none" transform="rotate(60 16 16)"/>
-                <path d="m16 11c-8.1 0-14.6 2.2-14.6 5s6.5 5 14.6 5 14.6-2.2 14.6-5-6.5-5-14.6-5z" stroke="#61dafb" strokeWidth="1.5" fill="none" transform="rotate(120 16 16)"/>
+            <div className="group flex flex-col items-center justify-center">
+              <svg className="w-16 h-16 hover:scale-125 transition-all duration-300 group-hover:rotate-180 filter drop-shadow-lg" viewBox="0 0 32 32">
+                <circle cx="16" cy="16" r="2.5" fill="#61dafb"/>
+                <path d="m16 10c-8.5 0-15.3 2.5-15.3 5.5s6.8 5.5 15.3 5.5 15.3-2.5 15.3-5.5-6.8-5.5-15.3-5.5z" stroke="#61dafb" strokeWidth="2" fill="none"/>
+                <path d="m16 10c-8.5 0-15.3 2.5-15.3 5.5s6.8 5.5 15.3 5.5 15.3-2.5 15.3-5.5-6.8-5.5-15.3-5.5z" stroke="#61dafb" strokeWidth="2" fill="none" transform="rotate(60 16 16)"/>
+                <path d="m16 10c-8.5 0-15.3 2.5-15.3 5.5s6.8 5.5 15.3 5.5 15.3-2.5 15.3-5.5-6.8-5.5-15.3-5.5z" stroke="#61dafb" strokeWidth="2" fill="none" transform="rotate(120 16 16)"/>
               </svg>
             </div>
 
             {/* Node.js */}
-            <div className="group flex flex-col items-center justify-center w-20 h-20 bg-white rounded-lg shadow-md hover:shadow-lg transition-all duration-300 hover:scale-105">
-              <svg className="w-12 h-12 group-hover:scale-110 transition-transform duration-300" viewBox="0 0 32 32">
-                <path d="M16 2.5L5 8.5v15l11 6 11-6v-15z" fill="#8cc84b"/>
-                <path d="M16 2.5v27l11-6v-15z" fill="#689f38"/>
+            <div className="group flex flex-col items-center justify-center">
+              <svg className="w-16 h-16 hover:scale-125 transition-all duration-300 group-hover:rotate-12 filter drop-shadow-lg" viewBox="0 0 32 32">
+                <path d="M16 2L5 7.5v17l11 5.5 11-5.5v-17z" fill="#8cc84b"/>
+                <path d="M16 2v28l11-5.5v-17z" fill="#689f38"/>
+                <path d="M16 9.5l-7 3.5v7l7 3.5 7-3.5v-7z" fill="#8cc84b" opacity="0.8"/>
               </svg>
             </div>
 
             {/* Tailwind CSS */}
-            <div className="group flex flex-col items-center justify-center w-20 h-20 bg-white rounded-lg shadow-md hover:shadow-lg transition-all duration-300 hover:scale-105">
-              <svg className="w-12 h-12 group-hover:scale-110 transition-transform duration-300" viewBox="0 0 32 32">
-                <path d="M9 13.5C9 10.46 10.46 9 13.5 9c4.56 0 5.28 3.42 7.72 3.96C22.44 13.25 23.54 12.75 25 11.5c0 3.04-1.46 4.5-4.5 4.5-4.56 0-5.28-3.42-7.72-3.96C11.56 11.75 10.46 12.25 9 13.5zm-7 7c0-3.04 1.46-4.5 4.5-4.5 4.56 0 5.28 3.42 7.72 3.96C15.44 20.25 16.54 19.75 18 18.5c0 3.04-1.46 4.5-4.5 4.5-4.56 0-5.28-3.42-7.72-3.96C4.56 18.75 3.46 19.25 2 20.5z" fill="#06b6d4"/>
+            <div className="group flex flex-col items-center justify-center">
+              <svg className="w-16 h-16 hover:scale-125 transition-all duration-300 group-hover:rotate-12 filter drop-shadow-lg" viewBox="0 0 32 32">
+                <path d="M8 13c0-3 1.5-4.5 4.5-4.5 4.5 0 5.25 3.375 8.25 4.5 1.5-.375 2.25-1.125 3.75-3 0 3-1.5 4.5-4.5 4.5-4.5 0-5.25-3.375-8.25-4.5C10.25 10.375 9.5 11.125 8 13zm-6 8.5c0-3 1.5-4.5 4.5-4.5 4.5 0 5.25 3.375 8.25 4.5 1.5-.375 2.25-1.125 3.75-3 0 3-1.5 4.5-4.5 4.5-4.5 0-5.25-3.375-8.25-4.5C4.25 18.875 3.5 19.625 2 21.5z" fill="#06b6d4"/>
               </svg>
             </div>
 
-            {/* Sass */}
-            <div className="group flex flex-col items-center justify-center w-20 h-20 bg-white rounded-lg shadow-md hover:shadow-lg transition-all duration-300 hover:scale-105">
-              <svg className="w-12 h-12 group-hover:scale-110 transition-transform duration-300" viewBox="0 0 32 32">
-                <path d="M27.1 17.6c-2.6 0-4.8 0.6-6.6 1.6-0.6-1.3-1.3-2.4-1.4-3.3-0.1-1 0-1.8 0-1.8s0.1-0.4-0.1-0.4-0.3 0.2-0.3 0.5c-0.1 0.4-0.4 1.2-0.6 1.9-0.3 1-2.8 4.5-4.2 6.3-0.5-0.9-0.8-1.7-0.9-2.3-0.1-1 0-1.8 0-1.8s0.1-0.4-0.1-0.4-0.3 0.2-0.3 0.5c-0.1 0.4-0.2 1.2-0.6 1.9-0.4 0.7-3.5 7.9-4.3 9.7-0.4 0.9-0.7 1.6-1 2.1 0 0 0 0 0 0.1-0.2 0.4-0.3 0.6-0.3 0.6v0.1c-0.2 0.3-0.4 0.6-0.5 0.6-0.1 0-0.3-1.3 0.4-3.1 1.4-3.6 4.8-9.1 4.8-9.3 0-0.1 0.5-1.6-0.5-2.4-1-0.8-2.7 0.6-2.8 0.6s-0.3 0.4-0.3 0.4 2.1-8.8-4-8.8c-3.7 0-8.8 4-8.8 7.6 0 3.3 3 5.5 4.1 7.3 1.5 2.4 3.3 4.3 3.3 5.8 0 1.8-1.5 4.4 0.8 4.4 2.9 0 4.2-6.7 4.2-6.7s-1.5 8.2 1.7 8.2c1.2 0 2.4-1.6 2.9-2.4v0c0.3-0.4 0.4-0.7 0.4-0.7v-0.1c0.5-0.8 1.6-2.8 3.2-6 2.1-4.1 4.1-7.4 4.1-7.4s0.2 1.2 0.8 3.1c0.4 1.1 1.1 2.4 1.7 3.6-0.5 0.7-0.8 1.1-0.8 1.1v0.1c-0.3 0.4-0.6 0.8-1 1.2-1.4 1.6-3.1 3.4-3.3 3.9-0.3 0.6-0.2 1 0.3 1.4 0.4 0.3 1.1 0.3 1.8 0.3 1.3-0.1 2.2-0.4 2.6-0.6 0.6-0.2 1.4-0.6 2.1-1.1 1.3-1 2.1-2.4 2-4.2-0.1-1-0.4-1.5-0.8-2.1 0.1-0.2 0.3-0.4 0.4-0.6 2.4-3.5 4.3-7.3 4.3-7.3s0.2 1.2 0.8 3.1c0.3 1 0.9 2.1 1.4 3.1-2.3 1.9-3.7 4.1-4.2 5.5-0.8 2.6-0.2 3.8 1.1 4.1 0.6 0.1 1.4-0.2 2-0.5 0.7-0.2 1.5-0.6 2.3-1.2 1.3-1 2.6-2.4 2.5-4.3-0.1-0.9-0.3-1.3-0.6-1.8 1.8-0.7 4.1-1.1 7.1-0.8 6.4 0.7 7.7 4.4 7.4 6-0.2 1.6-1.4 2.5-1.8 2.8-0.4 0.3-0.5 0.4-0.5 0.6 0.1 0.3 0.2 0.3 0.6 0.2 0.5-0.1 3.1-1.3 3.2-4.1 0.2-3.6-3.3-7.6-9.4-7.5z" fill="#cf649a"/>
+            {/* TypeScript */}
+            <div className="group flex flex-col items-center justify-center">
+              <svg className="w-16 h-16 hover:scale-125 transition-all duration-300 group-hover:rotate-12 filter drop-shadow-lg" viewBox="0 0 32 32">
+                <rect x="2" y="2" width="28" height="28" fill="#3178c6" rx="3"/>
+                <path d="M18.245 14.125h-2.99v8.75h-2.375v-8.75h-2.99v-2h8.355v2zm6.255-1.875c.814 0 1.525.106 2.135.32.609.213 1.12.518 1.53.915.41.396.719.877.925 1.441.207.564.31 1.202.31 1.915v6.159h-2.13v-5.909c0-.797-.205-1.405-.615-1.822-.41-.418-.994-.627-1.75-.627-.814 0-1.444.234-1.89.703-.446.468-.67 1.118-.67 1.95v5.705h-2.13v-8.75h2.04v1.375c.293-.469.717-.844 1.27-1.125.553-.281 1.185-.422 1.895-.422l.08.072z" fill="#ffffff"/>
               </svg>
             </div>
 
-            {/* Express */}
-            <div className="group flex flex-col items-center justify-center w-20 h-20 bg-white rounded-lg shadow-md hover:shadow-lg transition-all duration-300 hover:scale-105">
-              <svg className="w-12 h-12 group-hover:scale-110 transition-transform duration-300" viewBox="0 0 32 32">
-                <path d="M16 2L30 16 16 30 2 16z" fill="#000"/>
-                <path d="M8 12h16M8 16h16M8 20h16" stroke="#fff" strokeWidth="2" strokeLinecap="round"/>
+            {/* Next.js */}
+            <div className="group flex flex-col items-center justify-center">
+              <svg className="w-16 h-16 hover:scale-125 transition-all duration-300 group-hover:rotate-12 filter drop-shadow-lg" viewBox="0 0 32 32">
+                <circle cx="16" cy="16" r="14" fill="#000000"/>
+                <path d="M22.5 6.5L13.5 19h2l1.8-2.7h3.2l.8 2.7h2.2L17.5 6.5h-1.4zm-1.5 7.8h-2l2-3.3 2 3.3h-2z" fill="#ffffff"/>
+                <path d="M11.5 23.5l8.5-12.5" stroke="#ffffff" strokeWidth="1.5"/>
               </svg>
             </div>
 
             {/* VS Code */}
-            <div className="group flex flex-col items-center justify-center w-20 h-20 bg-white rounded-lg shadow-md hover:shadow-lg transition-all duration-300 hover:scale-105">
-              <svg className="w-12 h-12 group-hover:scale-110 transition-transform duration-300" viewBox="0 0 32 32">
-                <path d="M24.7 2.3c.9-.2 1.8.1 2.5.7.7.6 1.1 1.5 1.1 2.4v21.2c0 .9-.4 1.8-1.1 2.4-.7.6-1.6.9-2.5.7L7.1 26.5c-.5-.1-.9-.4-1.2-.8L2.6 21c-.5-.8-.5-1.8 0-2.6L5.9 13.8c.3-.4.7-.7 1.2-.8L24.7 2.3z" fill="#007acc"/>
-                <path d="M24.7 2.3L7.1 13 2.6 21l3.3 4.7 18.6-3.2V5.5L24.7 2.3z" fill="#0066b2"/>
+            <div className="group flex flex-col items-center justify-center">
+              <svg className="w-16 h-16 hover:scale-125 transition-all duration-300 group-hover:rotate-12 filter drop-shadow-lg" viewBox="0 0 32 32">
+                <path d="M23.15 2.587L18.21.21a1.494 1.494 0 0 0-1.705.29l-9.46 8.63-4.12-3.128a.999.999 0 0 0-1.276.057L.327 7.261A1 1 0 0 0 .326 8.74L3.899 12 .326 15.26a1 1 0 0 0 .001 1.479L1.65 17.94a.999.999 0 0 0 1.276.057l4.12-3.128 9.46 8.63a1.492 1.492 0 0 0 1.704.29l4.942-2.377A1.5 1.5 0 0 0 24 20.06V3.939a1.5 1.5 0 0 0-.85-1.352z" fill="#007acc"/>
+                <path d="M23.15 2.587l-4.94 2.377v13.072L23.15 20.41a1.5 1.5 0 0 0 .85-1.352V3.939a1.5 1.5 0 0 0-.85-1.352z" fill="#1f9cf0"/>
               </svg>
             </div>
 
             {/* Git */}
-            <div className="group flex flex-col items-center justify-center w-20 h-20 bg-white rounded-lg shadow-md hover:shadow-lg transition-all duration-300 hover:scale-105">
-              <svg className="w-12 h-12 group-hover:scale-110 transition-transform duration-300" viewBox="0 0 32 32">
+            <div className="group flex flex-col items-center justify-center">
+              <svg className="w-16 h-16 hover:scale-125 transition-all duration-300 group-hover:rotate-12 filter drop-shadow-lg" viewBox="0 0 32 32">
                 <path d="M30.428 14.663l-13.095-13.094c-0.35-0.349-0.92-0.349-1.269 0l-2.719 2.718 3.449 3.449c0.371-0.125 0.799-0.041 1.094 0.254 0.297 0.297 0.382 0.725 0.254 1.097l3.324 3.324c0.372-0.128 0.8-0.043 1.097 0.254 0.414 0.414 0.414 1.086 0 1.5s-1.086 0.414-1.5 0c-0.312-0.312-0.389-0.77-0.231-1.148l-3.1-3.1v8.15c0.101 0.05 0.194 0.118 0.274 0.198 0.414 0.414 0.414 1.086 0 1.5s-1.086 0.414-1.5 0-0.414-1.086 0-1.5c0.103-0.103 0.224-0.18 0.354-0.235v-8.234c-0.13-0.055-0.251-0.132-0.354-0.235-0.315-0.315-0.39-0.778-0.227-1.156l-3.404-3.404-8.988 8.987c-0.349 0.35-0.349 0.92 0 1.269l13.094 13.095c0.35 0.349 0.92 0.349 1.269 0l13.025-13.024c0.349-0.349 0.349-0.92 0-1.269z" fill="#f03c2e"/>
               </svg>
             </div>
 
             {/* GitHub */}
-            <div className="group flex flex-col items-center justify-center w-20 h-20 bg-white rounded-lg shadow-md hover:shadow-lg transition-all duration-300 hover:scale-105">
-              <svg className="w-12 h-12 group-hover:scale-110 transition-transform duration-300" viewBox="0 0 32 32">
+            <div className="group flex flex-col items-center justify-center">
+              <svg className="w-16 h-16 hover:scale-125 transition-all duration-300 group-hover:rotate-12 filter drop-shadow-lg" viewBox="0 0 32 32">
                 <path d="M16 2C8.3 2 2 8.3 2 16c0 6.2 4 11.4 9.6 13.3.7.1 1-.3 1-.7v-2.4c-3.9.8-4.7-1.9-4.7-1.9-.6-1.6-1.5-2-1.5-2-1.2-.8.1-.8.1-.8 1.4.1 2.1 1.4 2.1 1.4 1.2 2 3.1 1.4 3.9 1.1.1-.9.5-1.4.9-1.8-2.9-.3-6-1.5-6-6.5 0-1.4.5-2.6 1.3-3.5-.1-.3-.6-1.6.1-3.3 0 0 1.1-.4 3.6 1.3 1-.3 2.1-.4 3.2-.4s2.2.1 3.2.4c2.5-1.7 3.6-1.3 3.6-1.3.7 1.7.2 3 .1 3.3.8.9 1.3 2.1 1.3 3.5 0 5-3.1 6.2-6 6.5.5.4.9 1.2.9 2.4v3.6c0 .4.3.8 1 .7C26 27.4 30 22.2 30 16c0-7.7-6.3-14-14-14z" fill="#181717"/>
               </svg>
             </div>
 
             {/* PostgreSQL */}
-            <div className="group flex flex-col items-center justify-center w-20 h-20 bg-white rounded-lg shadow-md hover:shadow-lg transition-all duration-300 hover:scale-105">
-              <svg className="w-12 h-12 group-hover:scale-110 transition-transform duration-300" viewBox="0 0 32 32">
-                <path d="M25.8 15.2c0 3.3-2.2 5.8-5.8 5.8s-5.8-2.5-5.8-5.8V8.8c0-3.3 2.2-5.8 5.8-5.8s5.8 2.5 5.8 5.8v6.4z" fill="#336791"/>
-                <path d="M20 5c1.7 0 3 1.5 3 3.5v6c0 2-1.3 3.5-3 3.5s-3-1.5-3-3.5v-6c0-2 1.3-3.5 3-3.5z" fill="#fff"/>
-                <path d="M16 20v6c0 1.1-.9 2-2 2s-2-.9-2-2v-6h4z" fill="#336791"/>
+            <div className="group flex flex-col items-center justify-center">
+              <svg className="w-16 h-16 hover:scale-125 transition-all duration-300 group-hover:rotate-12 filter drop-shadow-lg" viewBox="0 0 32 32">
+                <path d="M23.5 11.5c-2.5-5.5-4.5-7.3-4.8-8.0-.3-.4-.5-.9-.7-1.4 0 .5-.1.7-.5 1.2-.7.6-4.4 3.7-4.7 10.0-.3 5.9 4.3 9.4 4.9 9.9l.1.0c.0.3-.1.8.5 3.1 0 0 .0.0.0.0.4-.3.6-.5.8-.7 2.0-1.6 3.6-4.3 3.6-8.4 0-.8-.1-1.7-.2-2.2z" fill="#336791"/>
+                <ellipse cx="16" cy="8" rx="8" ry="3" fill="#336791"/>
+                <ellipse cx="16" cy="13" rx="8" ry="3" fill="#336791" opacity="0.7"/>
+                <ellipse cx="16" cy="18" rx="8" ry="3" fill="#336791" opacity="0.5"/>
               </svg>
             </div>
 
             {/* Figma */}
-            <div className="group flex flex-col items-center justify-center w-20 h-20 bg-white rounded-lg shadow-md hover:shadow-lg transition-all duration-300 hover:scale-105">
-              <svg className="w-12 h-12 group-hover:scale-110 transition-transform duration-300" viewBox="0 0 32 32">
-                <path d="M8 16c0-2.2 1.8-4 4-4s4 1.8 4 4-1.8 4-4 4-4-1.8-4-4z" fill="#19bcfe"/>
-                <path d="M8 8c0-2.2 1.8-4 4-4h4v8h-4c-2.2 0-4-1.8-4-4z" fill="#09cf83"/>
-                <path d="M16 4h4c2.2 0 4 1.8 4 4s-1.8 4-4 4h-4V4z" fill="#a259ff"/>
-                <path d="M8 24c0-2.2 1.8-4 4-4h4v4c0 2.2-1.8 4-4 4s-4-1.8-4-4z" fill="#f24e1e"/>
-                <path d="M20 16c0-2.2 1.8-4 4-4s4 1.8 4 4-1.8 4-4 4-4-1.8-4-4z" fill="#ff7262"/>
+            <div className="group flex flex-col items-center justify-center">
+              <svg className="w-16 h-16 hover:scale-125 transition-all duration-300 group-hover:rotate-12 filter drop-shadow-lg" viewBox="0 0 32 32">
+                <circle cx="20" cy="16" r="4" fill="#19bcfe"/>
+                <rect x="8" y="4" width="8" height="8" rx="4" fill="#09cf83"/>
+                <rect x="16" y="4" width="8" height="8" rx="4" fill="#a259ff"/>
+                <rect x="8" y="20" width="8" height="8" rx="4" fill="#f24e1e"/>
+                <rect x="8" y="12" width="8" height="8" rx="4" fill="#ff7262"/>
               </svg>
             </div>
 
-            {/* Next.js */}
-            <div className="group flex flex-col items-center justify-center w-20 h-20 bg-white rounded-lg shadow-md hover:shadow-lg transition-all duration-300 hover:scale-105">
-              <svg className="w-12 h-12 group-hover:scale-110 transition-transform duration-300" viewBox="0 0 32 32">
-                <circle cx="16" cy="16" r="14" fill="#000"/>
-                <path d="M20.4 8.8L12.8 20.4h2.4l1.6-2.4h3.2l.8 2.4h2.4L16.8 8.8h-1.6l-2.4 3.6h1.6l1.2-1.8z" fill="#fff"/>
-                <path d="M24 16c0 4.4-3.6 8-8 8s-8-3.6-8-8 3.6-8 8-8 8 3.6 8 8z" stroke="#fff" strokeWidth="2" fill="none"/>
+            {/* MongoDB */}
+            <div className="group flex flex-col items-center justify-center">
+              <svg className="w-16 h-16 hover:scale-125 transition-all duration-300 group-hover:rotate-12 filter drop-shadow-lg" viewBox="0 0 32 32">
+                <path d="M15.9 3a12.85 12.85 0 0 0-8.7 4.2 13.5 13.5 0 0 0-3.6 6.6c-.4 2.9-.1 6.1 1.4 8.8 1.3 2.4 3.4 4.3 5.9 5.4.3.1.6.2.9.3v-.9c0-2.9.1-5.7.1-8.6 0-.3-.1-.5-.3-.7-.6-.6-1.1-1.3-1.4-2.1a6.2 6.2 0 0 1-.3-2.7c.1-1.2.5-2.3 1.1-3.3.9-1.4 2.3-2.5 3.9-3.1zm.2 25.2c2.5-1.1 4.6-3 5.9-5.4 1.5-2.7 1.8-5.9 1.4-8.8a13.5 13.5 0 0 0-3.6-6.6A12.85 12.85 0 0 0 16.1 3c1.6.6 3 1.7 3.9 3.1.6 1 1 2.1 1.1 3.3.1.9 0 1.8-.3 2.7-.3.8-.8 1.5-1.4 2.1-.2.2-.3.4-.3.7 0 2.9.1 5.7.1 8.6v.9c.3-.1.6-.2.9-.3z" fill="#4db33d"/>
+                <path d="M16 3.5c0 .8 0 1.5-.1 2.3 0 .7-.1 1.4-.2 2.1-.1 1.5-.3 3-.7 4.4-.2.7-.4 1.4-.7 2.1-.3.6-.6 1.2-1 1.8-.4.6-.8 1.1-1.3 1.6l-.8.8c-.1.1-.2.2-.2.4 0 .8.1 1.6.3 2.4.2.8.5 1.5.9 2.2.4.7.9 1.3 1.5 1.8.6.5 1.3.9 2.1 1.1.8-.2 1.5-.6 2.1-1.1.6-.5 1.1-1.1 1.5-1.8.4-.7.7-1.4.9-2.2.2-.8.3-1.6.3-2.4 0-.2-.1-.3-.2-.4l-.8-.8c-.5-.5-.9-1-1.3-1.6-.4-.6-.7-1.2-1-1.8-.3-.7-.5-1.4-.7-2.1-.4-1.4-.6-2.9-.7-4.4-.1-.7-.2-1.4-.2-2.1 0-.8-.1-1.5-.1-2.3z" fill="#4db33d"/>
               </svg>
             </div>
 
-            {/* MySQL */}
-            <div className="group flex flex-col items-center justify-center w-20 h-20 bg-white rounded-lg shadow-md hover:shadow-lg transition-all duration-300 hover:scale-105">
-              <svg className="w-12 h-12 group-hover:scale-110 transition-transform duration-300" viewBox="0 0 32 32">
-                <path d="M16 2C8.3 2 2 6.9 2 13v6c0 6.1 6.3 11 14 11s14-4.9 14-11v-6c0-6.1-6.3-11-14-11z" fill="#00618a"/>
-                <path d="M16 6c5.5 0 10 2.2 10 5s-4.5 5-10 5-10-2.2-10-5 4.5-5 10-5z" fill="#e48e00"/>
-                <path d="M16 16c5.5 0 10-2.2 10-5v4c0 2.8-4.5 5-10 5s-10-2.2-10-5v-4c0 2.8 4.5 5 10 5z" fill="#e48e00"/>
+            {/* Express.js */}
+            <div className="group flex flex-col items-center justify-center">
+              <svg className="w-16 h-16 hover:scale-125 transition-all duration-300 group-hover:rotate-12 filter drop-shadow-lg" viewBox="0 0 32 32">
+                <path d="M32 24.795c-1.164.296-1.884.013-2.53-.957l-4.594-6.356-.664-.88-5.365 7.257c-.613.873-1.256 1.253-2.4.944l6.87-9.222-6.396-8.33c1.1-.214 1.86-.105 2.535.88l4.765 6.435 4.8-6.4c.615-.873 1.276-1.205 2.38-.883l-2.48 3.288-3.36 4.375c-.4.5-.345.842.023 1.325L32 24.795zM.008 15.427l.562-2.764C2.1 7.193 8.37 4.92 12.694 8.3c2.527 1.5 3.355 4.062 3.03 6.93H1.48c-.214 5.003 3.1 7.26 6.77 7.26 2.7 0 4.83-.912 6.35-2.684l1.17 1.725c-2.363 2.684-5.793 3.597-8.693 3.597C2.734 25.127-.456 19.5.008 15.427zm14.17-2.368c.074-2.543-.618-4.62-2.963-5.682-3.175-1.257-6.52.835-7.24 5.682H14.18z" fill="#68a063"/>
               </svg>
             </div>
           </div>
