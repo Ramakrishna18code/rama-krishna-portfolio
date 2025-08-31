@@ -829,17 +829,17 @@ export default function Home() {
               
               <div className="space-y-6 text-gray-600 leading-relaxed">
                 <p className="text-lg">
-                  I'm <span className="font-semibold text-blue-600">Pedaviti Rama Krishna Reddy</span> — a Full Stack Developer and aspiring Salesforce Admin with real-world experience delivering scalable web and software solutions. I recently graduated with a B.Tech in Electronics & Communication Engineering from Swarna Bharathi Institute of Engineering & Technology, Khammam.
+                  I&apos;m <span className="font-semibold text-blue-600">Pedaviti Rama Krishna Reddy</span> — a Full Stack Developer and aspiring Salesforce Admin with real-world experience delivering scalable web and software solutions. I recently graduated with a B.Tech in Electronics & Communication Engineering from Swarna Bharathi Institute of Engineering & Technology, Khammam.
                 </p>
                 
                 <p>
-                  Over the past year, I've led and built projects across multiple domains — from a pharmacy e-commerce site to a hospital management platform with AI diagnostics — using React.js, Node.js, Express, PostgreSQL, and more. As a Project Manager and Core Developer at Omyra Technologies, I've coordinated full teams, worked directly with clients, and delivered production-ready systems under tight deadlines.
+                  Over the past year, I&apos;ve led and built projects across multiple domains — from a pharmacy e-commerce site to a hospital management platform with AI diagnostics — using React.js, Node.js, Express, PostgreSQL, and more. As a Project Manager and Core Developer at Omyra Technologies, I&apos;ve coordinated full teams, worked directly with clients, and delivered production-ready systems under tight deadlines.
                 </p>
                 
                 <div className="bg-blue-50 p-6 rounded-xl border-l-4 border-blue-600">
                   <p className="font-semibold text-blue-800 mb-2">What sets me apart:</p>
                   <p className="text-blue-700">
-                    I don't just write code — I own problems end-to-end. From architecture and system design to UI polish and client delivery, I care about making the product reliable, scalable, and simple for users.
+                    I don&apos;t just write code — I own problems end-to-end. From architecture and system design to UI polish and client delivery, I care about making the product reliable, scalable, and simple for users.
                   </p>
                 </div>
               </div>
