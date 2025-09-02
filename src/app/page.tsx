@@ -2,11 +2,17 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import { useHydration } from '../hooks/useHydration';
+import ClientOnly from '../components/ClientOnly';
 
 export default function Home() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const isHydrated = useHydration();
 
   useEffect(() => {
+    // Only run on client side after hydration
+    if (typeof window === 'undefined' || !document) return;
+    
     const handleClickOutside = (event: MouseEvent) => {
       const navToggle = document.getElementById('nav-toggle');
       const navMenu = document.getElementById('nav-menu');
@@ -32,78 +38,80 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-white text-gray-900 font-sans">
       {/* Simple Navigation Menu */}
-      <div className="fixed top-6 right-6 z-50">
-        <div className="relative">
-          {/* Hamburger Menu Button */}
-          <button 
-            id="nav-toggle" 
-            onClick={toggleMenu}
-            className="w-12 h-12 bg-slate-700 hover:bg-slate-600 rounded-full flex items-center justify-center shadow-lg transition-all duration-300"
-          >
-            <div className="w-6 h-6 flex flex-col justify-center items-center space-y-1">
-              <div className="w-5 h-0.5 bg-white rounded-full transition-all duration-300"></div>
-              <div className="w-5 h-0.5 bg-white rounded-full transition-all duration-300"></div>
-              <div className="w-5 h-0.5 bg-white rounded-full transition-all duration-300"></div>
-            </div>
-          </button>
+      <ClientOnly>
+        <div className="fixed top-6 right-6 z-50">
+          <div className="relative">
+            {/* Hamburger Menu Button */}
+            <button 
+              id="nav-toggle" 
+              onClick={toggleMenu}
+              className="w-12 h-12 bg-slate-700 hover:bg-slate-600 rounded-full flex items-center justify-center shadow-lg transition-all duration-300"
+            >
+              <div className="w-6 h-6 flex flex-col justify-center items-center space-y-1">
+                <div className="w-5 h-0.5 bg-white rounded-full transition-all duration-300"></div>
+                <div className="w-5 h-0.5 bg-white rounded-full transition-all duration-300"></div>
+                <div className="w-5 h-0.5 bg-white rounded-full transition-all duration-300"></div>
+              </div>
+            </button>
 
-          {/* Navigation Menu */}
-          <div 
-            id="nav-menu" 
-            className={`absolute top-16 right-0 bg-white rounded-xl shadow-2xl border border-gray-100 p-6 min-w-[200px] transform transition-all duration-300 origin-top-right ${
-              isMenuOpen 
-                ? 'scale-100 opacity-100' 
-                : 'scale-0 opacity-0'
-            }`}
-          >
-            <nav className="space-y-4">
-              <a 
-                href="#home" 
-                onClick={closeMenu}
-                className="block text-gray-700 hover:text-blue-600 font-medium py-2 px-3 rounded-lg hover:bg-blue-50 transition-all duration-300"
-              >
-                Home
-              </a>
-              <a 
-                href="#projects" 
-                onClick={closeMenu}
-                className="block text-gray-700 hover:text-blue-600 font-medium py-2 px-3 rounded-lg hover:bg-blue-50 transition-all duration-300"
-              >
-                My Projects
-              </a>
-              <a 
-                href="#services" 
-                onClick={closeMenu}
-                className="block text-gray-700 hover:text-blue-600 font-medium py-2 px-3 rounded-lg hover:bg-blue-50 transition-all duration-300"
-              >
-                Services
-              </a>
-              <a 
-                href="#about" 
-                onClick={closeMenu}
-                className="block text-gray-700 hover:text-blue-600 font-medium py-2 px-3 rounded-lg hover:bg-blue-50 transition-all duration-300"
-              >
-                About
-              </a>
-              <a 
-                href="#contact" 
-                onClick={closeMenu}
-                className="block text-gray-700 hover:text-blue-600 font-medium py-2 px-3 rounded-lg hover:bg-blue-50 transition-all duration-300"
-              >
-                Contact
-              </a>
-              <div className="border-t border-gray-200 my-3"></div>
-              <a 
-                href="#contact" 
-                onClick={closeMenu}
-                className="block bg-gradient-to-r from-blue-600 to-cyan-600 text-white text-center py-3 px-4 rounded-lg hover:shadow-lg transition-all duration-300 transform hover:scale-105"
-              >
-                Get in Touch
-              </a>
-            </nav>
+            {/* Navigation Menu */}
+            <div 
+              id="nav-menu" 
+              className={`absolute top-16 right-0 bg-white rounded-xl shadow-2xl border border-gray-100 p-6 min-w-[200px] transform transition-all duration-300 origin-top-right ${
+                isHydrated && isMenuOpen 
+                  ? 'scale-100 opacity-100' 
+                  : 'scale-0 opacity-0'
+              }`}
+            >
+              <nav className="space-y-4">
+                <a 
+                  href="#home" 
+                  onClick={closeMenu}
+                  className="block text-gray-700 hover:text-blue-600 font-medium py-2 px-3 rounded-lg hover:bg-blue-50 transition-all duration-300"
+                >
+                  Home
+                </a>
+                <a 
+                  href="#projects" 
+                  onClick={closeMenu}
+                  className="block text-gray-700 hover:text-blue-600 font-medium py-2 px-3 rounded-lg hover:bg-blue-50 transition-all duration-300"
+                >
+                  My Projects
+                </a>
+                <a 
+                  href="#services" 
+                  onClick={closeMenu}
+                  className="block text-gray-700 hover:text-blue-600 font-medium py-2 px-3 rounded-lg hover:bg-blue-50 transition-all duration-300"
+                >
+                  Services
+                </a>
+                <a 
+                  href="#about" 
+                  onClick={closeMenu}
+                  className="block text-gray-700 hover:text-blue-600 font-medium py-2 px-3 rounded-lg hover:bg-blue-50 transition-all duration-300"
+                >
+                  About
+                </a>
+                <a 
+                  href="#contact" 
+                  onClick={closeMenu}
+                  className="block text-gray-700 hover:text-blue-600 font-medium py-2 px-3 rounded-lg hover:bg-blue-50 transition-all duration-300"
+                >
+                  Contact
+                </a>
+                <div className="border-t border-gray-200 my-3"></div>
+                <a 
+                  href="#contact" 
+                  onClick={closeMenu}
+                  className="block bg-gradient-to-r from-blue-600 to-cyan-600 text-white text-center py-3 px-4 rounded-lg hover:shadow-lg transition-all duration-300 transform hover:scale-105"
+                >
+                  Get in Touch
+                </a>
+              </nav>
+            </div>
           </div>
         </div>
-      </div>
+      </ClientOnly>
 
       {/* Brand/Logo in Top Left */}
       <div className="fixed top-6 left-6 z-50">
@@ -183,7 +191,7 @@ export default function Home() {
                 <div className="absolute top-0 left-1/2 w-3 h-3 bg-blue-400 rounded-full transform -translate-x-1/2 animate-pulse"></div>
                 <div className="absolute top-1/2 right-0 w-2 h-2 bg-cyan-500 rounded-full transform -translate-y-1/2"></div>
               </div>
-              <div className="absolute inset-0 animate-spin-slow animation-delay-2000" style={{animationDirection: 'reverse'}}>
+              <div className="absolute inset-0 animate-spin-slow animation-delay-2000 animate-reverse">
                 <div className="absolute bottom-0 left-1/2 w-2 h-2 bg-cyan-400 rounded-full transform -translate-x-1/2 animate-bounce"></div>
                 <div className="absolute top-1/2 left-0 w-3 h-3 bg-blue-500 rounded-full transform -translate-y-1/2 animate-ping"></div>
               </div>
@@ -200,7 +208,7 @@ export default function Home() {
             {/* Enhanced Greeting with Wave Animation */}
             <div className="flex items-center justify-center mb-6 animate-fade-in-up">
               <span className="text-3xl animate-wave">👋</span>
-              <span className="ml-4 text-xl text-gray-600 font-medium animate-slide-in-left animation-delay-500">Hello there, I'm</span>
+              <span className="ml-4 text-xl text-gray-600 font-medium animate-slide-in-left animation-delay-500">Hello there, I&apos;m</span>
               <span className="ml-2 text-2xl font-bold bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent animate-slide-in-right animation-delay-700">Rama Krishna</span>
             </div>
             
@@ -216,7 +224,7 @@ export default function Home() {
               <span className="inline-block animate-typewriter animation-delay-1000">FRONTEND DEVELOPER</span>
             </div>
             <p className="text-lg text-gray-600 mb-8 max-w-3xl mx-auto animate-fade-in-up animation-delay-600">
-              "To work in an organization that provides ample opportunities to enhance my skills and contribute to its success."
+              &ldquo;To work in an organization that provides ample opportunities to enhance my skills and contribute to its success.&rdquo;
             </p>
             
             {/* Animated Contact Info */}
@@ -828,7 +836,7 @@ export default function Home() {
               </h2>
               
               <div className="space-y-6 text-gray-600 leading-relaxed">
-                <p className="text-lg">
+                <p>
                   I&apos;m <span className="font-semibold text-blue-600">Pedaviti Rama Krishna Reddy</span> — a Full Stack Developer and aspiring Salesforce Admin with real-world experience delivering scalable web and software solutions. I recently graduated with a B.Tech in Electronics & Communication Engineering from Swarna Bharathi Institute of Engineering & Technology, Khammam.
                 </p>
                 
@@ -1018,7 +1026,7 @@ export default function Home() {
                   <span className="text-white text-4xl">📧</span>
                 </div>
                 <h3 className="text-xl font-bold text-gray-800 mb-2">Ready to Connect?</h3>
-                <p className="text-gray-600">Let's discuss your next project and bring your ideas to life!</p>
+                <p className="text-gray-600">Let&apos;s discuss your next project and bring your ideas to life!</p>
               </div>
               
               {/* Contact Options */}
@@ -1098,7 +1106,7 @@ export default function Home() {
           </div>
           
           <div className="text-center border-t border-gray-800 pt-8">
-            <p className="text-gray-500">&copy; {new Date().getFullYear()} Pedaviti Rama Krishna Reddy. All rights reserved.</p>
+            <p className="text-gray-500">&copy; 2024 Pedaviti Rama Krishna Reddy. All rights reserved.</p>
             <p className="text-gray-600 mt-2">Built with Next.js, TypeScript & Tailwind CSS</p>
           </div>
         </div>

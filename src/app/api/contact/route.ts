@@ -11,7 +11,7 @@ export async function POST(request: Request) {
       data: { name, email, message },
       message: 'Contact form submitted successfully.'
     });
-  } catch (error) {
+  } catch {
     return NextResponse.json({
       success: false,
       message: 'Invalid request.'

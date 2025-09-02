@@ -189,6 +189,10 @@ body {
   animation: spin-slow 3s linear infinite;
 }
 
+.animate-reverse {
+  animation-direction: reverse;
+}
+
 .animate-float {
   animation: float 3s ease-in-out infinite;
 }
